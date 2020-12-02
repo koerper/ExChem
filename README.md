@@ -1,11 +1,11 @@
 ![Cover](assets/cover.png)
 ## About
-As part of the publication 'Exploring Structure-Property Relationships in Magnesium Dissolution Modulators'<sup>1</sup>, this repository includes the code of the developed webapp [*ExChem*](www.exchem.de). A running version can be found at [www.exchem.de](www.exchem.de).
+As part of the publication 'Exploring Structure-Property Relationships in Magnesium Dissolution Modulators'<sup>1</sup>, this repository includes the code of the developed webapp [*ExChem*](www.exchem.de). A running version can be found at [www.exchem.de](http://www.exchem.de).
 
-## What is [ExChem](www.exchem.de)?
+## What is [ExChem](http://www.exchem.de)?
  
 Searching for structure-property relationships is an effective approach to predict yet unknown material properties.
-[*ExChem*](www.exchem.de) allows the exploration of vast areas of chemical space by combining machine learning methods with comprehensive molecular
+[*ExChem*](http://www.exchem.de) allows the exploration of vast areas of chemical space by combining machine learning methods with comprehensive molecular
 databases.
 
 ### Example: Magnesium Dissolution Modulators<sup>1</sup>
@@ -40,7 +40,7 @@ Atoms are colored according to the CPK coloring scheme.
 
 ### References
 
-\[1\] Würger *et al.*, Exploring Structure-Property Relationships in Magnesium Dissolution Modulators, *accepted * (2020)
+\[1\] Würger *et al.*, Exploring Structure-Property Relationships in Magnesium Dissolution Modulators, *npj Materials Degradation*, *accepted * (2020)
 [[2] Lamaka *et al.*, Comprehensive screening of Mg corrosion inhibitors, *Corrosion Science* **128** 224–240 (2017)](https://www.sciencedirect.com/science/article/abs/pii/S0010938X17303931)  
 [[3] Würger *et al.*, Data Science Based Mg Corrosion Engineering, *Frontiers in Materials* **6** 53 (2019)](https://doi.org/10.3389/fmats.2019.00053)   
 [[4] Feiler *et al.*, In silico Screening of Modulators of Magnesium Dissolution, *Corrosion Science* 108245 (2020)](https://doi.org/10.1016/j.corsci.2019.108245)  
