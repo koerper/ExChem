@@ -1,4 +1,4 @@
-import plotly.graph_objects as go
+ plotly.graph_objects as go
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -423,7 +423,7 @@ footer = dbc.Navbar(
 ### App properties
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP,'https://use.fontawesome.com/releases/v5.8.1/css/all.css'])
 
-server = app.server
+#server = app.server
 
 app.title = 'ExChem'
 
@@ -658,5 +658,5 @@ def toggle_navbar_collapse(n, is_open):
     return is_open
 
 ### run server
-#if __name__ == '__main__':
-#    app.run_server(debug=True, use_reloader=False)  # Turn off reloader if inside Jupyter
+if __name__ == '__main__':
+    app.run_server(debug=True, use_reloader=False)  # Turn off reloader if inside Jupyter
