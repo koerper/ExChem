@@ -40,7 +40,7 @@ Atoms are colored according to the CPK coloring scheme.
 
 ### References
 
-\[1\] Würger *et al.*, Exploring Structure-Property Relationships in Magnesium Dissolution Modulators, *npj Materials Degradation*, *accepted * (2020)
+\[1\] Würger *et al.*, Exploring Structure-Property Relationships in Magnesium Dissolution Modulators, *npj Materials Degradation*, *accepted * (2020)  
 [[2] Lamaka *et al.*, Comprehensive screening of Mg corrosion inhibitors, *Corrosion Science* **128** 224–240 (2017)](https://www.sciencedirect.com/science/article/abs/pii/S0010938X17303931)  
 [[3] Würger *et al.*, Data Science Based Mg Corrosion Engineering, *Frontiers in Materials* **6** 53 (2019)](https://doi.org/10.3389/fmats.2019.00053)   
 [[4] Feiler *et al.*, In silico Screening of Modulators of Magnesium Dissolution, *Corrosion Science* 108245 (2020)](https://doi.org/10.1016/j.corsci.2019.108245)  
