@@ -1,4 +1,4 @@
-# ExChem
+![Cover](assets/cover.png)
 ## What is ExChem?
 ### About
 
