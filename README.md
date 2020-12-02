@@ -1,7 +1,5 @@
 ![Cover](assets/cover.png)
 ## About
-This repository includes the code for the webapp  latest paper '' submitted to  in 2020.
-
 As part of the publication 'Exploring Structure-Property Relationships in Magnesium Dissolution Modulators'<sup>1</sup>, this repository includes the code of the developed webapp [*ExChem*](www.exchem.de). A running version can be found at [www.exchem.de](www.exchem.de).
 
 ## What is [ExChem](www.exchem.de)?
