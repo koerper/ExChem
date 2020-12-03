@@ -1,6 +1,6 @@
 ![Cover](assets/cover.png)  
 
-![DOI](https://zenodo.org/badge/286691281.svg)](https://zenodo.org/badge/latestdoi/286691281)
+[![DOI](https://zenodo.org/badge/286691281.svg)](https://zenodo.org/badge/latestdoi/286691281)
 
 
 ## About
