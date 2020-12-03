@@ -1,4 +1,5 @@
 ![Cover](assets/cover.png)
+![DOI](https://zenodo.org/badge/286691281.svg)](https://zenodo.org/badge/latestdoi/286691281)
 ## About
 As part of the publication 'Exploring Structure-Property Relationships in Magnesium Dissolution Modulators'<sup>1</sup>, this repository includes the code of the developed webapp [*ExChem*](http://www.exchem.de). A running version can be found at [www.exchem.de](http://www.exchem.de).
 
