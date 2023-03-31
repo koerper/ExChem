@@ -1,7 +1,6 @@
 import plotly.graph_objects as go
 import numpy as np
-import pandas as pd
- 
+import pandas as pd 
 import dash
 from dash import dcc
 import dash_bio as dashbio
@@ -671,5 +670,5 @@ def toggle_navbar_collapse(n, is_open):
     return is_open
 
 ### run server
-if __name__ == '__main__':
-   app.run_server(debug=True, use_reloader=True)  # Turn off reloader if inside Jupyter
+#if __name__ == '__main__':
+#   app.run_server(debug=True, use_reloader=True)  # Turn off reloader if inside Jupyter
