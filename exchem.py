@@ -1,20 +1,17 @@
- plotly.graph_objects as go
+import plotly.graph_objects as go
 import numpy as np
 import pandas as pd
-import plotly.express as px
-
+ 
 import dash
-import dash_core_components as dcc
+from dash import dcc
 import dash_bio as dashbio
-import dash_html_components as html
-from dash_bio_utils import xyz_reader
+from dash import html
+from dash_bio.utils import xyz_reader
 from dash.dependencies import Input, Output, State
-import dash_table
-from dash_table.Format import Format, Scheme
+from dash import dash_table
+from dash.dash_table.Format import Format, Scheme
 import dash_bootstrap_components as dbc
 
-
-import json
 
 def simbapre(kernel, df, index, no):
     #idx = index + 7211
@@ -241,7 +238,7 @@ fig.update_layout(
 )
 
 speck_view_main={
-    'resolution': 270,
+    'resolution': 269,
     'ao': 0.1,
     'outline': 1,
     'atomScale': 0.25,
@@ -250,7 +247,7 @@ speck_view_main={
 }
 
 speck_view_sim={
-    'resolution': 270,
+    'resolution': 269,
     'ao': 0.1,
     'outline': 1,
     'atomScale': 0.25,
@@ -299,7 +296,8 @@ modal = html.Div(
                     the search for new corrosion inhibitors.
                     
                     *Note: For some compounds duplicates exist in the reference database. However, due to the training error of the KRR model
-                    it may happen that experimental and predicted IEs do not match, although the structures are identical.*
+                    it may happen that experimental and predicted IEs do not match, although the structures are identical. Generally, we cannot 
+                    be held accountable for inaccuratelly predicted values.*
 
                     ###### How To Use
                     
@@ -315,10 +313,10 @@ modal = html.Div(
                     
                     ###### References
                     
-                    [[1] Lamaka *et al.*, Comprehensive screening of Mg corrosion inhibitors, *Corrosion Science* **128** 224–240 (2017)](https://www.sciencedirect.com/science/article/abs/pii/S0010938X17303931)  
-                    [[2] Würger *et al.*, Data Science Based Mg Corrosion Engineering, *Frontiers in Materials* **6** 53 (2019)](https://doi.org/10.3389/fmats.2019.00053)   
-                    [[3] Feiler *et al.*, In silico Screening of Modulators of Magnesium Dissolution, *Corrosion Science* 108245 (2020)](https://doi.org/10.1016/j.corsci.2019.108245)  
-                    \[4\] Würger *et al.*, Exploring Structure-Property Relationships in Magnesium Dissolution Modulators, *accepted * (2020)
+                    [[1] Comprehensive screening of Mg corrosion inhibitors, *Corrosion Science* **128** 224–240 (2017)](https://www.sciencedirect.com/science/article/abs/pii/S0010938X17303931)  
+                    [[2] Data Science Based Mg Corrosion Engineering, *Frontiers in Materials* **6** 53 (2019)](https://doi.org/10.3389/fmats.2019.00053)   
+                    [[3] In silico Screening of Modulators of Magnesium Dissolution, *Corrosion Science* 108245 (2020)](https://doi.org/10.1016/j.corsci.2019.108245)  
+                    [[4] Exploring Structure-Property Relationships in Magnesium Dissolution Modulators, *npj Materials Degradation* **5** 2 (2021)](https://www.nature.com/articles/s41529-020-00148-z)
                     ''',dangerously_allow_html=True)
                 ),
                 dbc.ModalFooter(
@@ -355,9 +353,9 @@ extra = dbc.Container(fluid=True,children=[dbc.Row(
             ),
         )        
     ],
-    #no_gutters=True,
-    align="center"
-)],style={'color': 'white', 'width' : '100%' })
+    align="center",
+    className="g-0"
+)],className="g-0",style={'color': 'white', 'width' : '100%' })
 
 
 
@@ -373,7 +371,7 @@ navbar = dbc.Navbar(
                         dbc.Col(dbc.NavbarBrand("ExChem: Explore the Chemical Space", className="ml-2"), width="auto"),
                     ],
                     align="center",
-                    no_gutters=True,
+                    className="g-0",
                     style={'width' : '100%'}
                 ),
                 #href="https://plot.ly",
@@ -407,7 +405,7 @@ footer = dbc.Navbar(
                 html.A("© 2020 Tim Würger"), width="auto", lg="auto", xl="auto" 
             )        
         ],  align="center",
-            #no_gutters=True,
+            className="g-0",
             justify="between",
             style={'width' : '100%'}
         )
@@ -423,7 +421,7 @@ footer = dbc.Navbar(
 ### App properties
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP,'https://use.fontawesome.com/releases/v5.8.1/css/all.css'])
 
-#server = app.server
+server = app.server
 
 app.title = 'ExChem'
 
@@ -444,7 +442,17 @@ app.layout = html.Div([
                 config={
                     'displayModeBar': False
                 }
-            )
+            ),
+            html.A(href="https://www.hereon.de",children=[
+                    html.Img(src="https://raw.githubusercontent.com/koerper/ExChem/master/assets/hereon_logo.png", height="60px")
+                ],
+                style={'display': 'inline-block', 'vertical-align' : 'center','padding-top' : '2%','padding-right' : '1%'}
+                ),
+            html.A(href="https://www.tuhh.de",children=[
+                    html.Img(src="https://raw.githubusercontent.com/koerper/ExChem/master/assets/tuhh_logo.png", height="35px")
+                ],
+                style={'display': 'inline-block', 'vertical-align' : 'center','padding-top' : '2%'}
+                ),
             
         ],
         style={'width': '56%', 'display': 'inline-block', 'padding-top' : '1%'}),
@@ -457,7 +465,9 @@ app.layout = html.Div([
                     dashbio.Speck(
                         id='my-speck',
                         data=mol,
-                        view=speck_view_main
+                        view=speck_view_main,
+                        style={'width' : '269px',
+                               'height' : '269px'}
                     )
                 ], 
                 style={'border': '3px solid','width' : '275px','height' : '275px'}),
@@ -476,7 +486,9 @@ app.layout = html.Div([
                     dashbio.Speck(
                         id='sim-speck',
                         data=mol,
-                        view=speck_view_sim
+                        view=speck_view_sim,
+                        style={'width' : '269px',
+                               'height' : '269px'}
                     )
                 ], 
                 style={'border': '3px dashed','width' : '275px','height' : '275px'}),
@@ -510,7 +522,8 @@ app.layout = html.Div([
                         'similar structures'
                     ],width={"size": "auto", "offset": "10px"}),
                 ],align='center',
-                no_gutters=False)
+                className="g-0"
+                )
                 ],style={'padding-bottom' : '10px'}),
                 dash_table.DataTable(
                     id='table',
@@ -564,7 +577,7 @@ app.layout = html.Div([
         ],
         #style={'width': '49%', 'display': 'inline-block', 'vertical-align' : 'top', 'padding-left' : '3%'})
         style={'width': '700px', 'display': 'inline-block', 'vertical-align' : 'top'})
-    ],style={'font-family' : 'Arial', 'padding-top' : '4%', 'padding-left' : '1%', 'padding-bottom' : '3%'}),
+    ],style={'font-family' : 'Arial', 'padding-top' : '3%', 'padding-left' : '1%', 'padding-bottom' : '3%'}),
     
     footer
 ]#,style={'display':'flex', 'flex-direction': 'row'}
@@ -659,4 +672,4 @@ def toggle_navbar_collapse(n, is_open):
 
 ### run server
 if __name__ == '__main__':
-    app.run_server(debug=True, use_reloader=False)  # Turn off reloader if inside Jupyter
+   app.run_server(debug=True, use_reloader=True)  # Turn off reloader if inside Jupyter
